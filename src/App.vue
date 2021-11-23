@@ -1,15 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<!-- vue3中的根标签可以多个 -->
+  <h2>{{name}}+{{age}}</h2>
+  <h2>{{msg}}</h2>
+  <button @click="say">name</button>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+// import {h} from 'vue'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  // components: {
+  
+  // }
+  data(){
+    return {
+      msg:'hello vue'
+    }
+  },
+  setup(){
+    let name='ashin'
+    let age=18
+
+    function say(){
+      console.log('my name is',name,age)
+    }
+    //setup返回一个对象 常用
+    return{
+      name,
+      age,
+      say
+    }
+    //返回一个渲染函数 替换模版中的所有内容
+    // return ()=>h('h1','ashin')
   }
 }
 </script>
