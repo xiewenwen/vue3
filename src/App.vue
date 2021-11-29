@@ -7,6 +7,7 @@
   <!-- 插槽带入数据 -->
   <Person :msg="hello" :name="ashin"><h2>good study day day up</h2></Person>
   <Demo></Demo>
+  <Count></Count>
 </template>
 <script>
 // import {h} from 'vue'
@@ -14,11 +15,13 @@
 import { ref, reactive } from "vue";
 import Person from "./components/Person.vue";
 import Demo from "./components/Demo.vue";
+import Count from "./components/Count.vue";
 export default {
   name: "App",
   components: {
     Person,
     Demo,
+    Count,
   },
   data() {
     return {
