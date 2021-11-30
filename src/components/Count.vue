@@ -17,6 +17,10 @@ export default {
       name: "ashin",
       age: 19,
     });
+    let p = ref({
+      name: "ashin",
+      age: 19,
+    });
     //情况一：vue3中的单个参数的watch属性
     watch(sum, (newvalue, oldvalue) => {
       console.log(newvalue, oldvalue);
@@ -36,6 +40,14 @@ export default {
     watch(person, (newvalue, oldvalue) => {
       console.log(newvalue, oldvalue);
     });
+    //当p定义的时候 用了ref定义 在检测的时候需要开启深度检测，否则无法检测到实际的数据
+    watch(
+      p,
+      (newvalue, oldvalue) => {
+        console.log(newvalue, oldvalue);
+      },
+      { deep: true }
+    );
 
     function getone() {
       num.value++;
