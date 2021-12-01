@@ -10,6 +10,7 @@
   <Count></Count>
   <WatchPerson></WatchPerson>
   <LifeCycle v-show="show"></LifeCycle>
+  <HookUse></HookUse>
 </template>
 <script>
 // import {h} from 'vue'
@@ -20,6 +21,7 @@ import Demo from "./components/Demo.vue";
 import Count from "./components/Count.vue";
 import WatchPerson from "./components/WatchPerson.vue";
 import LifeCycle from "./components/LifyCycle.vue";
+import HookUse from "./components/HookUse.vue";
 export default {
   name: "App",
   components: {
@@ -28,6 +30,7 @@ export default {
     Count,
     WatchPerson,
     LifeCycle,
+    HookUse,
   },
   data() {
     return {
