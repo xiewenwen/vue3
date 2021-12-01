@@ -9,6 +9,7 @@
   <Demo></Demo>
   <Count></Count>
   <WatchPerson></WatchPerson>
+  <LifeCycle v-show="show"></LifeCycle>
 </template>
 <script>
 // import {h} from 'vue'
@@ -18,6 +19,7 @@ import Person from "./components/Person.vue";
 import Demo from "./components/Demo.vue";
 import Count from "./components/Count.vue";
 import WatchPerson from "./components/WatchPerson.vue";
+import LifeCycle from "./components/LifyCycle.vue";
 export default {
   name: "App",
   components: {
@@ -25,6 +27,7 @@ export default {
     Demo,
     Count,
     WatchPerson,
+    LifeCycle,
   },
   data() {
     return {
@@ -40,6 +43,7 @@ export default {
     console.log("setup函数执行");
     let name = ref("ashin");
     let age = ref(18);
+    let show = ref(true);
     let info = ref({
       type: "singer",
       gender: "men",
@@ -73,6 +77,7 @@ export default {
       age,
       say,
       info,
+      show,
     };
     //返回一个渲染函数 替换模版中的所有内容
     // return ()=>h('h1','ashin')
