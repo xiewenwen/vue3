@@ -2,17 +2,33 @@
   <h2>原始name：{{ person.first }}{{ person.last }}</h2>
   <!-- <h2>计算属性name：{{ finaname }}</h2> -->
   <h2>vue3的计算属性：{{ person.newname }}</h2>
+  <h2>{{ person.age }}</h2>
 </template>
 
 <script>
-import { reactive, computed } from "@vue/reactivity";
+import {
+  reactive,
+  computed,
+  shallowReactive,
+  shallowRef,
+} from "@vue/reactivity";
 export default {
   name: "Demo",
   setup() {
     let person = reactive({
       first: "a",
       last: "shin",
+      age: 18,
     });
+    //传入的是对象 shallowReactive会对一层数据的响应式(浅响应式 )
+    let person2 = shallowReactive({
+      age: 19,
+      info: {
+        name: "ashin",
+        gender: "men",
+      },
+    });
+    let x = shallowRef(0);
     //计算属性需要引入模块
     //直接在setup上下的对象中追加新的属性，用computed箭头函数
     //（简写形式）
@@ -36,7 +52,7 @@ export default {
       },
     });
 
-    return { person };
+    return { person, person2 };
   },
   //   computed: {
   //     finaname() {
