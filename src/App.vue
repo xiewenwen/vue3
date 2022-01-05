@@ -11,6 +11,7 @@
   <WatchPerson></WatchPerson>
   <LifeCycle v-show="show"></LifeCycle>
   <HookUse></HookUse>
+  <ArrLearn></ArrLearn>
 </template>
 <script>
 // import {h} from 'vue'
@@ -22,6 +23,7 @@ import Count from "./components/Count.vue";
 import WatchPerson from "./components/WatchPerson.vue";
 import LifeCycle from "./components/LifyCycle.vue";
 import HookUse from "./components/HookUse.vue";
+import ArrLearn from "./components/ArrLearn.vue"
 export default {
   name: "App",
   components: {
@@ -31,6 +33,7 @@ export default {
     WatchPerson,
     LifeCycle,
     HookUse,
+    ArrLearn
   },
   data() {
     return {
